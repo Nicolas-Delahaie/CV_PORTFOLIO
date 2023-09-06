@@ -1,5 +1,18 @@
+import { useState, useEffect } from "react";
+import donnees from "../datas/contenu_FR.json";
+
+import localisation from "../datas/logos/localisation.jpg";
+import telephone from "../datas/logos/telephone.jpg";
+import mail from "../datas/logos/mail.jpg";
+import calendrier from "../datas/logos/calendrier.jpg";
+import voiture from "../datas/logos/voiture.jpg";
+import linkedin from "../datas/logos/linkedin.png";
 
 function Home() {
+    const [langue, setLangue] = useState("fr");
+
+    console.log(donnees);
+
     return <section id="home">
         <section id="zoneLangues">
             <a id="fr">Français</a>
@@ -9,34 +22,34 @@ function Home() {
         <section id="cv">
             <header>
                 <section id="titrePrincipal_cv">
-                    <h1></h1>
-                    <h2></h2>
+                    <h1>{donnees.titrePrincipal.nom}</h1>
+                    <h2>{donnees.titrePrincipal.profession}</h2>
                 </section>
 
                 <article id="informationsPersonnelles">
                     <section>
-                        <img src="src/img/logos/localisation.jpg" />
-                        <p></p>
+                        <img src={localisation} />
+                        <p>{donnees.informationsPersonnelles.adresse}</p>
                     </section>
                     <section>
-                        <img src="src/img/logos/telephone.jpg" />
-                        <p></p>
+                        <img src={telephone} />
+                        <p>{donnees.informationsPersonnelles.numero}</p>
                     </section>
                     <section>
-                        <img src="src/img/logos/mail.jpg" />
-                        <a href="mailto:nico601.delahaie@gmail.com"></a>
+                        <img src={mail} />
+                        <a href={"mailto:"+donnees.informationsPersonnelles.mail}>{donnees.informationsPersonnelles.mail}</a>
                     </section>
                     <section>
-                        <img src="src/img/logos/calendrier.jpg" />
-                        <p></p>
+                        <img src={calendrier} />
+                        <p>{donnees.informationsPersonnelles.date_de_naissance}</p>
                     </section>
                     <section>
-                        <img src="src/img/logos/voiture.jpg" />
-                        <p></p>
+                        <img src={voiture} />
+                        <p>{donnees.informationsPersonnelles.permis}</p>
                     </section>
                     <section>
-                        <img src="src/img/logos/linkedin.png" />
-                        <a href="https://www.linkedin.com/in/nicolas-delahaie-a02b38257/"></a>
+                        <img src={linkedin} />
+                        <a href={donnees.informationsPersonnelles.linkedin.lien}>{donnees.informationsPersonnelles.linkedin.nomProfil}</a>
                     </section>
                 </article>
             </header>
@@ -121,7 +134,7 @@ function Home() {
                     <h1>Voici mon Portfolio</h1>
                     <hr class="trait traitMarron" />
                     <p>Projets colaboratifs et personnels</p>
-                    <button onclick="window.location.href = '#zonePhotosProjets';"><strong>VISIONNER MES PROJETS</strong></button>
+                    <button><strong>VISIONNER MES PROJETS</strong></button>
                 </section>
             </header>
             <main>
@@ -129,7 +142,7 @@ function Home() {
                     <h2>Grand fan de github</h2>
                     <hr class="trait" />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, repellat sed doloribus, quidem commodi voluptatem labore est earum velit magni recusandae placeat. Voluptate id explicabo incidunt architecto omnis facere ratione?</p>
-                    <button onclick="window.location.href = 'https://github.com/Nicolas-Delahaie'"><strong>CONSULTER MON GITHUB</strong></button>
+                    <button><strong>CONSULTER MON GITHUB</strong></button>
                 </article>
 
                 <article id="zoneIcones">
