@@ -32,31 +32,25 @@ code {
 /*                 SPECIFIQUE                 */
 /* ------------------------------------------ */
 
-
-/* -------------- LANGUES -------------- */
-#zoneLangues {
-  /* position:; */
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-#zoneLangues>a {
-  color: var(--marron);
+/* -------------- PERSONNALISATION -------------- */
+.lienPersonnalisation {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: white;
+  border: 3px solid white;
+  border-radius: 20px;
   padding: 5px;
-}
 
-#zoneLangues>a:hover {
-  color: var(--gris-fonce);
-  cursor: pointer;
+  margin: 10px;
 }
-
 
 
 /* -------------- CV -------------- */
 #cv {
   width: 769px;
   background-color: white;
+  margin-top: 50px;
 }
 
 #titrePrincipal_cv {
