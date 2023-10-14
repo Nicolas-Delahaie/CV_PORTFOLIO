@@ -48,8 +48,12 @@ function Home() {
                     "formation": "Lycee Alfred Kastler",
                     "duree": "(2018-2020)",
                     "details": [
-                        "Spacialités",
-                        "NSI", "Maths expertes", "(Physique)",
+                        "Spécialités :",
+                        [
+                            "NSI",
+                            "Maths expertes",
+                            "(Physique)"
+                        ],
                         "Bac mention bien"
                     ]
                 }
@@ -141,31 +145,28 @@ function Home() {
                 <aside id="formations">
                     <h2>{datas.formations.titre}</h2>
 
-                    <article>
-                        <h3>{datas.formations.contenu[0].formation}</h3>
-                        <p>{datas.formations.contenu[0].duree}</p>
-
-                        <ul>
-                            <li>{datas.formations.contenu[0].details[0]}</li>
-                            <li>{datas.formations.contenu[0].details[1]}</li>
-                            <li>{datas.formations.contenu[0].details[2]}</li>
-                        </ul>
-                    </article>
-
-                    <article>
-                        <h3>{datas.formations.contenu[1].formation}</h3>
-                        <p>{datas.formations.contenu[1].duree}</p>
-
-                        <ul>
-                            <li>{datas.formations.contenu[1].details[0]}</li>
-                            <ul>
-                                <li>{datas.formations.contenu[1].details[1]}</li>
-                                <li>{datas.formations.contenu[1].details[2]}</li>
-                                <li>{datas.formations.contenu[1].details[3]}</li>
-                            </ul>
-                            <li>{datas.formations.contenu[1].details[4]}</li>
-                        </ul>
-                    </article>
+                    {
+                        datas.formations.contenu.map(formation =>
+                            <article>
+                                <h3>{formation.formation}</h3>
+                                <p>{formation.duree}</p>
+                                <ul>
+                                    {
+                                        formation.details.map(elmt =>
+                                            Array.isArray(elmt) ?
+                                                <ul>
+                                                    {elmt.map(ligne =>
+                                                        <li>{ligne}</li>)
+                                                    }
+                                                </ul>
+                                                :
+                                                <li>{elmt}</li>
+                                        )
+                                    }
+                                </ul>
+                            </article>
+                        )
+                    }
                 </aside>
 
                 <article id="savoir_faire">
