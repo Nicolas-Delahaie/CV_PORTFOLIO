@@ -2,7 +2,7 @@ import { BrowserRouter, Routes } from "react-router-dom";
 import { Route } from "react-router";
 import { useState } from "react";
 
-import './styles/index.css';
+import './styles/index.scss';
 import Home from './pages/Home';
 import Personnalisation from './pages/Personnalisation';
 function App() {

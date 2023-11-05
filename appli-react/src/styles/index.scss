@@ -16,11 +16,9 @@ code {
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-
 /* A FAIRE : 
     Mettre des videos à la place des photos qui se lancent lorsqu'on survole 
 */
-
 :root {
   --marron: RGB(191, 146, 104);
   --bleu-fonce: RGB(48, 56, 72);
@@ -521,7 +519,7 @@ button:hover {
 
 
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
 
   /* ---------- SPECIFIQUE ---------- */
   #informationsPersonnelles {
@@ -549,7 +547,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media (max-width: 769px) {
 
   /* ---------- SPECIFIQUE ---------- */
   #informationsPersonnelles {
