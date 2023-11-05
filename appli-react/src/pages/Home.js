@@ -29,8 +29,9 @@ function Home() {
             }
         },
         "objectifs": {
-            "titre": "OBJECTIF",
-            "contenu": "Je souhaiterais à la suite de mon BUT informatique entrer en école d’ingénieur. Au préalable, j’aimerais, à l’issue de mes stages, trouver la specialité qui me conviendrait le mieux parmi celles que j’étudie actuellement."
+            stage: "Je souhaiterais à la suite de mon BUT informatique entrer en école d’ingénieur. Au préalable, j’aimerais, à l’issue de mes stages, trouver la specialité qui me conviendrait le mieux parmi celles que j’étudie actuellement.",
+            job_etudiant: "Actuellement en BUT informatique, je souhaiterais trouver du travail (job d’été, missions d’intérim) pour financer mes futurs projets, tout en appréhendant le monde du travail.",
+            interim: "Actuellement en BUT informatique, je souhaiterais découvrir le monde du travail en mettant ma condition physique à utilité."
         },
         "formations": {
             "titre": "FORMATIONS",
@@ -69,15 +70,16 @@ function Home() {
                 "HTML / CSS / PHP / JavaScript",
                 "SQL / DAO",
                 "SHELL Unix"]
-            ]
+            ],
         ],
         "savoir_etre": [
-            [true, "Discipliné", " alimentation et sports dont musculation"],
-            [true, "Sociable :", " communication aisée lors de projets en équipe grâce aux différents projets passés"],
+            [true, "Discipliné :", " alimentation et sports dont musculation"],
+            [true, "Sociable :", " communication aisée en équipe grâce à ma participation à divers projets "],
             [true, "Rigoureux :", " respecte méticuleusement les consignes"],
             [true, "Actif :", " pratique quotidienne du vélo (indépendant des transports en commun)"],
             [true, "Perseverant :", " ne lâche pas une tâche lorsqu'elle n'est pas completement achevée"],
-            [true, "Partageur :", " enthousiaste à l'idée de transmettre mes connaissances"]
+            [true, "Partageur :", " enthousiaste à l'idée de transmettre mes connaissances"],
+            [true, "Soif de connaissance :", " toujours envie d’apprendre"],
         ]
     });
 
@@ -136,10 +138,10 @@ function Home() {
                 <article id="objectifs">
                     <section id="separateur_objectif">
                         <section className="ligneSeparatrice"></section>
-                        <h2 className="titre_separateur">{datas.objectifs.titre}</h2>
+                        <h2 className="titre_separateur">OBJECTIF</h2>
                         <section className="ligneSeparatrice"></section>
                     </section>
-                    <p>{datas.objectifs.contenu}</p>
+                    <p>{datas.objectifs.stage}</p>
                 </article>
 
                 <aside id="formations">
@@ -171,7 +173,7 @@ function Home() {
 
                 <article id="savoir_faire">
                     <section className="separateur_savoirs">
-                        <h2 className="titre_separateur">{datas.savoir_faire.titre}</h2>
+                        <h2 className="titre_separateur">SAVOIR-FAIRE</h2>
                         <section className="ligneSeparatrice"></section>
                     </section>
 
@@ -194,7 +196,7 @@ function Home() {
 
                 <article id="savoir_etre">
                     <section className="separateur_savoirs">
-                        <h2 className="titre_separateur">{datas.savoir_etre.titre}</h2>
+                        <h2 className="titre_separateur">SAVOIR-ÊTRE</h2>
                         <section className="ligneSeparatrice"></section>
                     </section>
                     <ul>
