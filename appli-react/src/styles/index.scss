@@ -31,375 +31,376 @@ code {
 /* ------------------------------------------ */
 
 /* -------------- PERSONNALISATION -------------- */
-.lienPersonnalisation {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  color: white;
-  border: 3px solid white;
-  border-radius: 20px;
-  padding: 5px;
-
-  margin: 10px;
-}
-
-
-/* -------------- CV -------------- */
-#cv {
-  width: 769px;
-  background-color: white;
-  margin-top: 50px;
-}
-
-#titrePrincipal_cv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid var(--marron);
-  height: 150px;
-}
-
-#titrePrincipal_cv>h1 {
-  font-size: 50px;
-}
-
-#titrePrincipal_cv>h2 {
-  font-size: 25px;
-}
-
-#informationsPersonnelles {
-  display: grid;
-  padding: 20px;
-}
-
-#informationsPersonnelles>section {
-  text-align: center;
-}
-
-#informationsPersonnelles>section>img {
-  height: 50px;
-}
-
-#informationsPersonnelles>section>a {
-  display: block;
-  color: var(--bleu-fonce);
-}
-
-/* ----------------- */
-
-#cv>main {
-  display: grid;
-}
-
-#separateur_objectif {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-#objectifs>p {
-  margin: 30px 0px;
-}
-
-#formations {
-  background-color: var(--gris-fonce);
-}
-
-#formations>h2 {
-  margin-top: 10px;
-  text-align: center;
-}
-
-#formations>article {
-  margin-top: 30px;
-}
-
-#formations>article>h3 {
-  font-size: 18px;
-  text-align: center;
-}
-
-#formations>article>p {
-  text-align: center;
-}
-
-#formations>article>ul {
-  padding: 0px 30px;
-}
-
-#savoir_faire>ul {
-  margin: 20px 10px;
-}
-
-#savoir_etre>ul {
-  margin: 20px 10px;
-}
-
-
-/* -------------- Portfolio -------------- */
-#portfolio>header {
-  height: 70vh;
-
-  display: grid;
-  /*Definition en fonction de la taille de la fenetre*/
-
-  /* background-image: url("header.jpg");
-  background-size:cover;
-  background-position: center center; */
-
-  align-items: center;
-  justify-content: center;
-}
-
-#titrePrincipal_portfolio {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  color: var(--bleu-fonce);
-
-  padding: 0px 30px;
-}
-
-#titrePrincipal_portfolio>h1 {
-  font-size: 60px;
-}
-
-#titrePrincipal_portfolio>.trait {
-  margin: 40px 0px;
-}
-
-#titrePrincipal_portfolio>p {
-  width: 100%;
-  font-size: 30px;
-  margin-bottom: 60px;
-  color: var(--gris-clair);
-}
-
-#titrePrincipal_portfolio>button {
-  background: var(--bleu-fonce);
-  color: white;
-}
-
-/* ----------------- */
-
-#portfolio>main {
-  display: flex;
-  flex-direction: column;
-}
-
-#zoneBleue {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  color: white;
-  background-color: var(--bleu-fonce);
-
-  padding: 6%;
-}
-
-#zoneBleue>.trait {
-  margin: 20px 0px;
-}
-
-#zoneBleue>h2 {
-  font-size: 35px;
-}
-
-#zoneBleue>p {
-  margin: 0px 20%;
-  color: var(--gris-clair);
-}
-
-#zoneBleue>button {
-  background: white;
-  margin-top: 20px;
-}
-
-#zoneIcones {
-  margin: 90px 0px;
-}
-
-#titreIcones {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#titreIcones>.trait {
-  margin: 20px 0px;
-}
-
-#titreIcones>h2 {
-  font-size: 35px;
-}
-
-#grilleIcones {
-  display: grid;
-  padding: 0px 15%;
-}
-
-#grilleIcones>section {
-  text-align: center;
-}
-
-#grilleIcones>section>h3 {
-  margin: 10px 0px;
-}
-
-
-#projets {
-  margin-top: 90px;
-}
-
-#titreProjet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#titreProjet>.trait {
-  margin: 20px 0px;
-}
-
-#titreProjet>h2 {
-  font-size: 35px;
-}
-
-#zonePhotosProjets {
-  background-color: var(--bleu-fonce);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 3% 2%;
-}
-
-#zonePhotosProjets article {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-
-  position: relative;
-  margin: 20px;
-}
-
-#surfNow {
-  width: 300px;
-}
-
-#bataille {
-  width: 350px;
-}
-
-#roulette {
-  height: 300px;
-}
-
-#carte_bus {
-  width: 600px;
-}
-
-#puissance4 {
-  width: 250;
-}
-
-#reseau {
-  width: 300px;
-}
-
-#bruitage {
-  width: 600px;
-}
-
-#hanoi {
-  width: 550px;
-}
-
-#demineur {
-  width: 350px;
-}
-
-#graphiques_rugby {
-  width: 600px;
-}
-
-#chifoumi {
-  width: 350px;
-}
-
-
-/* ----------------- */
-
-#portfolio>footer {
-  display: flex;
-  flex-direction: column;
-  padding: 10vh 0px;
-}
-
-#titreFooter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#titreFooter>h2 {
-  font-size: 35px;
-}
-
-#titreFooter>.trait {
-  margin: 25px 0px;
-}
-
-#titreFooter>p {
-  margin-bottom: 10px;
-}
-
-#footerGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  padding: 0px 25%;
-}
-
-#footerGrid>section {
-  text-align: center;
-}
-
-#footerGrid>section>p {
-  margin: 0px;
-  white-space: nowrap;
-}
-
-#footerGrid>section>p:hover {
-  color: var(--bleu-fonce);
-  cursor: pointer;
-}
-
-/* ------------------------------------------ */
-/*                   GLOBAL                   */
-/* ------------------------------------------ */
-/*  ------ BALISES ------*/
-* {
-  margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 #home {
-  background: linear-gradient(to bottom, var(--bleu-fonce) 150px, white 150px);
-  background-repeat: no-repeat;
   align-items: center;
   display: flex;
   flex-direction: column;
   padding: 0px;
   padding-top: 50;
+
+  .lienPersonnalisation {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 5px;
+
+    margin: 10px;
+  }
+
+  #cv {
+    background: linear-gradient(to bottom, var(--bleu-fonce) 150px, white 150px);
+    background-repeat: no-repeat;
+    width: 769px;
+    background-color: white;
+    padding: 30px 70px;
+
+
+    #titrePrincipal_cv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--marron);
+      background-color: white;
+      height: 150px;
+      z-index: 3;
+
+      &>h1 {
+        font-size: 50px;
+      }
+
+      &>h2 {
+        font-size: 25px;
+      }
+    }
+
+    #informationsPersonnelles {
+      display: grid;
+      padding: 20px;
+
+      &>section {
+        text-align: center;
+
+        &>img {
+          height: 50px;
+        }
+
+        &>a {
+          display: block;
+          color: var(--bleu-fonce);
+        }
+      }
+    }
+
+    main {
+      display: grid;
+    }
+
+    #separateur_objectif {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    #objectifs>p {
+      margin: 30px 0px;
+    }
+
+    #formations {
+      background-color: var(--gris-fonce);
+
+      &>h2 {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      &>article {
+        margin-top: 30px;
+
+        &>h3 {
+          font-size: 18px;
+          text-align: center;
+        }
+
+        &>p {
+          text-align: center;
+        }
+
+        &>ul {
+          padding: 0px 30px;
+        }
+      }
+
+    }
+
+
+
+    #savoir_faire>ul {
+      margin: 20px 10px;
+    }
+
+    #savoir_etre>ul {
+      margin: 20px 10px;
+    }
+  }
+
+  #portfolio {
+    &>header {
+      height: 70vh;
+
+      display: grid;
+      /*Definition en fonction de la taille de la fenetre*/
+
+      /* background-image: url("header.jpg");
+      background-size:cover;
+      background-position: center center; */
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    #titrePrincipal_portfolio {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      color: var(--bleu-fonce);
+
+      padding: 0px 30px;
+
+      &>h1 {
+        font-size: 60px;
+      }
+
+      &>.trait {
+        margin: 40px 0px;
+      }
+
+      &>p {
+        width: 100%;
+        font-size: 30px;
+        margin-bottom: 60px;
+        color: var(--gris-clair);
+      }
+
+      &>button {
+        background: var(--bleu-fonce);
+        color: white;
+      }
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #zoneBleue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      color: white;
+      background-color: var(--bleu-fonce);
+
+      padding: 6%;
+
+      &>.trait {
+        margin: 20px 0px;
+      }
+
+      &>h2 {
+        font-size: 35px;
+      }
+
+      &>p {
+        margin: 0px 20%;
+        color: var(--gris-clair);
+      }
+
+      &>button {
+        background: white;
+        margin-top: 20px;
+      }
+
+    }
+
+    #zoneIcones {
+      margin: 90px 0px;
+    }
+
+    #titreIcones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &>.trait {
+        margin: 20px 0px;
+      }
+
+      &>h2 {
+        font-size: 35px;
+      }
+    }
+
+    #grilleIcones {
+      display: grid;
+      padding: 0px 15%;
+
+      &>section {
+        text-align: center;
+
+        &>h3 {
+          margin: 10px 0px;
+        }
+      }
+    }
+
+
+    #projets {
+      margin-top: 90px;
+    }
+
+    #titreProjet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &>.trait {
+        margin: 20px 0px;
+      }
+
+      &>h2 {
+        font-size: 35px;
+      }
+    }
+
+    #zonePhotosProjets {
+      background-color: var(--bleu-fonce);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 3% 2%;
+
+      article {
+        display: flex;
+        justify-self: center;
+        align-self: center;
+
+        position: relative;
+        margin: 20px;
+      }
+    }
+
+
+    #surfNow {
+      width: 300px;
+    }
+
+    #bataille {
+      width: 350px;
+    }
+
+    #roulette {
+      height: 300px;
+    }
+
+    #carte_bus {
+      width: 600px;
+    }
+
+    #puissance4 {
+      width: 250;
+    }
+
+    #reseau {
+      width: 300px;
+    }
+
+    #bruitage {
+      width: 600px;
+    }
+
+    #hanoi {
+      width: 550px;
+    }
+
+    #demineur {
+      width: 350px;
+    }
+
+    #graphiques_rugby {
+      width: 600px;
+    }
+
+    #chifoumi {
+      width: 350px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      padding: 10vh 0px;
+    }
+
+    #titreFooter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &>h2 {
+        font-size: 35px;
+      }
+
+      &>.trait {
+        margin: 25px 0px;
+      }
+
+      &>p {
+        margin-bottom: 10px;
+      }
+    }
+
+
+    #footerGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0px 25%;
+
+      &>section {
+        text-align: center;
+
+        &>p {
+          margin: 0px;
+          white-space: nowrap;
+
+          &:hover {
+            color: var(--bleu-fonce);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/* ------------------------------------------ */
+/*                   GLOBAL                   */
+/* ------------------------------------------ */
+* {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -439,7 +440,7 @@ button:hover {
 }
 
 .titre_separateur {
-  background-color: var(--bleu-fonce);
+  background-color: var(--bleu-fonce) !important;
   color: white;
   padding: 15px;
   text-align: center;
@@ -537,7 +538,7 @@ button:hover {
   }
 
   #formations {
-    grid-row: span 2;
+    grid-row: span 3;
   }
 
   /* ---------- */

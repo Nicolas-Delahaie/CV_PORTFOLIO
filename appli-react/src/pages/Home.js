@@ -8,6 +8,8 @@ import calendrier from "../datas/logos/calendrier.jpg";
 import voiture from "../datas/logos/voiture.jpg";
 import linkedin from "../datas/logos/linkedin.png";
 
+import html2canvas from 'html2canvas';
+
 function Home() {
     // const [langue, setLangue] = useState("fr");
 
@@ -83,19 +85,35 @@ function Home() {
         ]
     });
 
-    // async function test() {
-    //     const data = await fetch("../datas/contenu_FR.json", {
-    //         method: "GET",
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json',
-    //         },
-    //     })
 
-    //     // data = await data.json();
-    //     console.log(data);
+    const TELECHARGER = () => {
+        const element = document.getElementById('cv'); // Remplacez 'your-page' par l'ID de l'élément que vous souhaitez capturer
+        html2canvas(element).then((canvas) => {
+            canvas.toBlob((blob) => {
+                // Créez un lien de téléchargement pour l'image
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'CV.png'; // Nom du fichier à télécharger
+                link.click();
+            });
+        });
+    };
+    useEffect(() => TELECHARGER(), []);
+
+
+    // const puppeteer = require('puppeteer');
+
+    // async function capturePDF() {
+    //     const browser = await puppeteer.launch();
+    //     const page = await browser.newPage();
+    //     await page.goto('http://localhost:3000/'); // Remplacez par l'URL de votre page React
+
+    //     // Capture de la page en PDF
+    //     await page.pdf({ path: 'page.pdf', format: 'A4' }); // Le PDF sera enregistré en tant que 'page.pdf'
+
+    //     await browser.close();
     // }
-    // test();
+    // useEffect(() => capturePDF(), []);
 
     return <section id="home">
         {/* <Link to="/personnalisation" className="lienPersonnalisation">Changer informations</Link> */}
@@ -170,6 +188,27 @@ function Home() {
                         )
                     }
                 </aside>
+                <article id="savoir_etre">
+                    <section className="separateur_savoirs">
+                        <h2 className="titre_separateur">SAVOIR-ÊTRE</h2>
+                        <section className="ligneSeparatrice"></section>
+                    </section>
+                    <ul>
+                        {
+                            datas.savoir_etre.map(savoir =>
+                                savoir[0] && (Array.isArray(savoir[1]) ?
+                                    <ul>
+                                        {
+                                            savoir[1].map(elmt => <li>{elmt}</li>)
+                                        }
+                                    </ul>
+                                    :
+                                    <li><strong>{savoir[1]}</strong>{savoir[2]}</li>
+                                )
+                            )
+                        }
+                    </ul>
+                </article>
 
                 <article id="savoir_faire">
                     <section className="separateur_savoirs">
@@ -194,26 +233,11 @@ function Home() {
                     </ul>
                 </article>
 
-                <article id="savoir_etre">
+                <article id="competences">
                     <section className="separateur_savoirs">
-                        <h2 className="titre_separateur">SAVOIR-ÊTRE</h2>
+                        <h2 className="titre_separateur">COMPETENCES TECHNIQUES</h2>
                         <section className="ligneSeparatrice"></section>
                     </section>
-                    <ul>
-                        {
-                            datas.savoir_etre.map(savoir =>
-                                savoir[0] && (Array.isArray(savoir[1]) ?
-                                    <ul>
-                                        {
-                                            savoir[1].map(elmt => <li>{elmt}</li>)
-                                        }
-                                    </ul>
-                                    :
-                                    <li><strong>{savoir[1]}</strong>{savoir[2]}</li>
-                                )
-                            )
-                        }
-                    </ul>
                 </article>
             </main>
         </section>
