@@ -51,6 +51,16 @@ code {
     margin: 10px;
   }
 
+  .btnTelecharger {
+    align-self: start;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px;
+    position: absolute;
+
+  }
+
   #cv {
     background: linear-gradient(to bottom, var(--bleu-fonce) 150px, white 150px);
     background-repeat: no-repeat;
@@ -419,7 +429,6 @@ a {
 }
 
 button {
-
   border: none;
   border-radius: 30px;
   height: 60px;

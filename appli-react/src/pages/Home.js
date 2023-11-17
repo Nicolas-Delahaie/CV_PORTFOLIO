@@ -14,43 +14,43 @@ function Home() {
     // const [langue, setLangue] = useState("fr");
 
     const [datas, setDatas] = useState({
-        "titrePrincipal": {
-            "nom": "Nicolas DELAHAIE",
-            "profession": "ETUDIANT INFORMATIQUE"
+        titrePrincipal: {
+            nom: "Nicolas DELAHAIE",
+            profession: "ETUDIANT INFORMATIQUE"
         },
-        "informationsPersonnelles": {
-            "adresse": "56 avenue Docteur Bernard Gaudeul, 64100 Bayonne",
-            "numero": "07 82 56 37 44",
-            "mail": "nico601.delahaie@gmail.com",
-            "date_de_naissance": "6 janvier 2003",
-            "permis": "Titulaire du permis B",
-            "linkedin":
+        informationsPersonnelles: {
+            adresse: "56 avenue Docteur Bernard Gaudeul, 64100 Bayonne",
+            numero: "07 82 56 37 44",
+            mail: "nico601.delahaie@gmail.com",
+            date_de_naissance: "6 janvier 2003",
+            permis: "Titulaire du permis B",
+            linkedin:
             {
-                "lien": "https://www.linkedin.com/in/nicolas-delahaie-a02b38257/",
-                "nomProfil": "Nicolas DELAHAIE"
+                lien: "https://www.linkedin.com/in/nicolas-delahaie-a02b38257/",
+                nomProfil: "Nicolas DELAHAIE"
             }
         },
-        "objectifs": {
+        objectifs: {
             stage: "Je souhaiterais à la suite de mon BUT informatique entrer en école d’ingénieur. Au préalable, j’aimerais, à l’issue de mes stages, trouver la specialité qui me conviendrait le mieux parmi celles que j’étudie actuellement.",
             job_etudiant: "Actuellement en BUT informatique, je souhaiterais trouver du travail (job d’été, missions d’intérim) pour financer mes futurs projets, tout en appréhendant le monde du travail.",
             interim: "Actuellement en BUT informatique, je souhaiterais découvrir le monde du travail en mettant ma condition physique à utilité."
         },
-        "formations": {
-            "titre": "FORMATIONS",
-            "contenu": [
+        formations: {
+            titre: "FORMATIONS",
+            contenu: [
                 {
-                    "formation": "BUT Informatique",
-                    "duree": "(depuis 2021)",
-                    "details": [
+                    formation: "BUT Informatique",
+                    duree: "(depuis 2021)",
+                    details: [
                         "Parcours A",
                         "IUT de Bayonne",
                         "Université de Pau et des Pays de l'Adour"
                     ]
                 },
                 {
-                    "formation": "Lycee Alfred Kastler",
-                    "duree": "(2018-2020)",
-                    "details": [
+                    formation: "Lycee Alfred Kastler",
+                    duree: "(2018-2020)",
+                    details: [
                         "Spécialités :",
                         [
                             "NSI",
@@ -62,7 +62,7 @@ function Home() {
                 }
             ]
         },
-        "savoir_faire": [
+        savoir_faire: [
             [true, "Organiser", " mon temps de travail"],
             [true, "Manager", " une équipe de projet"],
             [true, "Vulgariser", " un projet"],
@@ -74,7 +74,7 @@ function Home() {
                 "SHELL Unix"]
             ],
         ],
-        "savoir_etre": [
+        savoir_etre: [
             [true, "Discipliné :", " alimentation et sports dont musculation"],
             [true, "Sociable :", " communication aisée en équipe grâce à ma participation à divers projets "],
             [true, "Rigoureux :", " respecte méticuleusement les consignes"],
@@ -98,7 +98,6 @@ function Home() {
             });
         });
     };
-    useEffect(() => TELECHARGER(), []);
 
 
     // const puppeteer = require('puppeteer');
@@ -117,7 +116,7 @@ function Home() {
 
     return <section id="home">
         {/* <Link to="/personnalisation" className="lienPersonnalisation">Changer informations</Link> */}
-
+        <button onClick={() => TELECHARGER()} className="btnTelecharger">Telecharger PNG</button>
         <section id="cv">
             <header>
                 <section id="titrePrincipal_cv">
@@ -233,12 +232,12 @@ function Home() {
                     </ul>
                 </article>
 
-                <article id="competences">
+                {/* <article id="competences">
                     <section className="separateur_savoirs">
                         <h2 className="titre_separateur">COMPETENCES TECHNIQUES</h2>
                         <section className="ligneSeparatrice"></section>
                     </section>
-                </article>
+                </article> */}
             </main>
         </section>
 
