@@ -12,7 +12,6 @@ code {
     monospace;
 } */
 
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -58,16 +57,18 @@ code {
     border: 1px solid black;
     margin: 10px;
     position: absolute;
-
   }
 
   #cv {
-    background: linear-gradient(to bottom, var(--bleu-fonce) 150px, white 150px);
+    background: linear-gradient(
+      to bottom,
+      var(--bleu-fonce) 150px,
+      white 150px
+    );
     background-repeat: no-repeat;
     width: 769px;
     background-color: white;
     padding: 30px 70px;
-
 
     #titrePrincipal_cv {
       display: flex;
@@ -79,11 +80,11 @@ code {
       height: 150px;
       z-index: 3;
 
-      &>h1 {
+      & > h1 {
         font-size: 50px;
       }
 
-      &>h2 {
+      & > h2 {
         font-size: 25px;
       }
     }
@@ -92,14 +93,14 @@ code {
       display: grid;
       padding: 20px;
 
-      &>section {
+      & > section {
         text-align: center;
 
-        &>img {
+        & > img {
           height: 50px;
         }
 
-        &>a {
+        & > a {
           display: block;
           color: var(--bleu-fonce);
         }
@@ -115,51 +116,48 @@ code {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    #objectifs>p {
+    #objectifs > p {
       margin: 30px 0px;
     }
 
     #formations {
       background-color: var(--gris-fonce);
 
-      &>h2 {
+      & > h2 {
         margin-top: 10px;
         text-align: center;
       }
 
-      &>article {
+      & > article {
         margin-top: 30px;
 
-        &>h3 {
+        & > h3 {
           font-size: 18px;
           text-align: center;
         }
 
-        &>p {
+        & > p {
           text-align: center;
         }
 
-        &>ul {
+        & > ul {
           padding: 0px 30px;
         }
       }
-
     }
 
-
-
-    #savoir_faire>ul {
+    #savoir_faire > ul {
       margin: 20px 10px;
     }
 
-    #savoir_etre>ul {
+    #savoir_etre > ul {
       margin: 20px 10px;
     }
   }
 
   #portfolio {
-    &>header {
-      height: 70vh;
+    & > header {
+      // height: 70vh;
 
       display: grid;
       /*Definition en fonction de la taille de la fenetre*/
@@ -185,22 +183,22 @@ code {
 
       padding: 0px 30px;
 
-      &>h1 {
+      & > h1 {
         font-size: 60px;
       }
 
-      &>.trait {
+      & > .trait {
         margin: 40px 0px;
       }
 
-      &>p {
+      & > p {
         width: 100%;
         font-size: 30px;
         margin-bottom: 60px;
         color: var(--gris-clair);
       }
 
-      &>button {
+      & > button {
         background: var(--bleu-fonce);
         color: white;
       }
@@ -222,24 +220,23 @@ code {
 
       padding: 6%;
 
-      &>.trait {
+      & > .trait {
         margin: 20px 0px;
       }
 
-      &>h2 {
+      & > h2 {
         font-size: 35px;
       }
 
-      &>p {
+      & > p {
         margin: 0px 20%;
         color: var(--gris-clair);
       }
 
-      &>button {
+      & > button {
         background: white;
         margin-top: 20px;
       }
-
     }
 
     #zoneIcones {
@@ -252,11 +249,11 @@ code {
       align-items: center;
       text-align: center;
 
-      &>.trait {
+      & > .trait {
         margin: 20px 0px;
       }
 
-      &>h2 {
+      & > h2 {
         font-size: 35px;
       }
     }
@@ -265,15 +262,14 @@ code {
       display: grid;
       padding: 0px 15%;
 
-      &>section {
+      & > section {
         text-align: center;
 
-        &>h3 {
+        & > h3 {
           margin: 10px 0px;
         }
       }
     }
-
 
     #projets {
       margin-top: 90px;
@@ -285,11 +281,11 @@ code {
       align-items: center;
       text-align: center;
 
-      &>.trait {
+      & > .trait {
         margin: 20px 0px;
       }
 
-      &>h2 {
+      & > h2 {
         font-size: 35px;
       }
     }
@@ -310,7 +306,6 @@ code {
         margin: 20px;
       }
     }
-
 
     #surfNow {
       width: 300px;
@@ -367,29 +362,28 @@ code {
       flex-direction: column;
       align-items: center;
 
-      &>h2 {
+      & > h2 {
         font-size: 35px;
       }
 
-      &>.trait {
+      & > .trait {
         margin: 25px 0px;
       }
 
-      &>p {
+      & > p {
         margin-bottom: 10px;
       }
     }
-
 
     #footerGrid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 0px 25%;
 
-      &>section {
+      & > section {
         text-align: center;
 
-        &>p {
+        & > p {
           margin: 0px;
           white-space: nowrap;
 
@@ -402,8 +396,6 @@ code {
     }
   }
 }
-
-
 
 /* ------------------------------------------ */
 /*                   GLOBAL                   */
@@ -478,13 +470,12 @@ button:hover {
   width: 100%;
   align-self: center;
   justify-self: center;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .photosProjets:hover {
   filter: brightness(35%);
   cursor: pointer;
-
 
   transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -492,7 +483,7 @@ button:hover {
   z-index: 1;
 }
 
-.photosProjets:hover~.textePhotoProjet {
+.photosProjets:hover ~ .textePhotoProjet {
   animation-duration: 500ms;
   opacity: 1;
   z-index: 2;
@@ -513,7 +504,7 @@ button:hover {
   color: var(--gris-clair);
 }
 
-.textePhotoProjet>h2 {
+.textePhotoProjet > h2 {
   font-size: 30px;
 }
 
@@ -527,17 +518,14 @@ button:hover {
   font-style: italic;
 }
 
-
-
 @media (min-width: 768px) {
-
   /* ---------- SPECIFIQUE ---------- */
   #informationsPersonnelles {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
   }
 
-  #cv>main {
+  #cv > main {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(3, auto);
   }
@@ -558,14 +546,13 @@ button:hover {
 }
 
 @media (max-width: 769px) {
-
   /* ---------- SPECIFIQUE ---------- */
   #informationsPersonnelles {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
   }
 
-  #cv>main {
+  #cv > main {
     grid-template-rows: repeat(4, auto);
   }
 
