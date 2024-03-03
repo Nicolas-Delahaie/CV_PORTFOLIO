@@ -1,9 +1,10 @@
+import React from "react";
 
-function Personnalisation({ datas }) {
-
-    return (datas &&
-        <form>
-            {/* {
+export function Personnalisation({ datas }: { datas: any }) {
+  return (
+    datas && (
+      <form>
+        {/* {
                 datas.savoir_faire.map((data, i) =>
                     <>
                         <input type="checkbox" name="savoir_faire" id="case1" />
@@ -19,7 +20,7 @@ function Personnalisation({ datas }) {
             <br />
             <input type="checkbox" name="case3" id="case3" />
             <label for="case1">Truc 3</label> */}
-        </form>
-    );
+      </form>
+    )
+  );
 }
-export default Personnalisation;
