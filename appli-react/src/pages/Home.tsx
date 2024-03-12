@@ -15,7 +15,6 @@ export function Home() {
 
   const [datas, setDatas] = useState({
     titrePrincipal: {
-      nom: "Nicolas DELAHAIE",
       profession: "ETUDIANT INFORMATIQUE",
     },
     informationsPersonnelles: {
@@ -130,16 +129,105 @@ export function Home() {
   // }
   // useEffect(() => capturePDF(), []);
 
+  const projets = [
+    {
+      nomImage: "chemins_bus.jpg",
+      nom: "chemins_bus",
+      titre: "Itineraires de bus",
+      description:
+        "Codage de méthodes du plus court chemin en python appliqué sur le réseau de bus du bab",
+      date: "Projet en semestre 2 de BUT 1 en Mathématiques",
+    },
+    {
+      nomImage: "SurfNow.png",
+      nom: "surfNow",
+      titre: "SurfNow",
+      description: "Application maquetée puis programmée en html et css",
+      date: "Projet en semestre 1 de BUT 1 en Développement web",
+    },
+    {
+      nomImage: "bataille_navale.jpg",
+      nom: "bataille",
+      titre: "Bataille navale",
+      description:
+        "Interface du jeux de la Bataille codé sur la console en C++",
+      date: "Projet en semestre 1 de BUT 1 en Programmation bas niveau",
+    },
+    {
+      nomImage: "roulette.jpg",
+      nom: "roulette",
+      titre: "Jeux de la roulette",
+      description:
+        "Programme C++ qui affiche dans la console le jeux de la roulette et qui permet de tenter automatiquement des méthodes sur de grands nombres de parties pour observer la tendance. On peut y jouer en naviguant avec les fleches puis en validant avec entrer. L'affichage est dynamique en fonction de ce que le joueur séléctionne.",
+      date: "Projet personnel réalisé en semestre 2 de BUT 1",
+    },
+    {
+      nomImage: "puissance4.jpg",
+      nom: "puissance4",
+      titre: "Puissance 4",
+      description:
+        "Codage du puissance 4 en assembleur sur simulateur à la suite d'une évaluation reprenant un bout de l'algorithme (affichage des jetons)",
+      date: "Projet personnel de fin de BUT1",
+    },
+    {
+      nomImage: "reseau.jpg",
+      nom: "reseau",
+      titre: "Adressage réseau d'une entreprise",
+      description:
+        "Architecture réseau d'une entreprise factice pensée et adressée depuis Marionnet",
+      date: "Projet en semestre 2 de BUT 1 en Réseau",
+    },
+    {
+      nomImage: "bruitage.jpg",
+      nom: "bruitage",
+      titre: "Bruitage d'image",
+      description:
+        "Programme python qui va bruiter une image plus ou moins .Il peut également transformer un pixel art avec beaucoup de pixels en un pixel art avec le strice minimum de pixels.",
+    },
+    {
+      nomImage: "Hanoi.jpg",
+      nom: "hanoi",
+      titre: "Tours d'Hanoï",
+      description:
+        "Programme C++ qui permet de jouer aux tours d'Hanoï dans la console. Il suffit de cliquer sur la tour de base puis sa destination. On peut également retourner en arrière grace à un système de pile.",
+      date: "Projet personnel basé sur un TP en semestre 2 de BUT 1 en programmation bas niveau",
+    },
+    {
+      nomImage: "demineur.jpg",
+      nom: "demineur",
+      titre: "Démineur",
+      description:
+        "Programme C++ qui permet de jouer au démineur dans la console. Il suffit d'écrire l'instruction puis de valider et la console se met a jour.",
+      date: "Projet personnel au semestre 1 du BUT 1",
+    },
+    {
+      nomImage: "graphique_python.jpg",
+      nom: "graphiques_rugby",
+      titre: "Analyses équipe rugby",
+      description:
+        "Programme python affichant des graphiques divers et variés liés à différentes analyses sur des données csv d'une équipe de rugby.",
+      date: "Projet en semestre 2 de BUT 1 en mathématiques",
+    },
+    {
+      nomImage: "Chifoumi.jpg",
+      nom: "chifoumi",
+      titre: "Chifoumi",
+      description:
+        "Programme C++ utilisant un modèle MVP sur QT. Ce chifoumi est très complet : persalisation du temps et du pseudo, pause du temps, identification avec une base de donnée et bien plus encore.",
+      date: "Projet en semestre 2 de BUT 1 en programmation IHM",
+    },
+  ];
+
   return (
     <section id="home">
       {/* <Link to="/personnalisation" className="lienPersonnalisation">Changer informations</Link> */}
-      <button onClick={() => TELECHARGER()} className="btnTelecharger">
+      {/* <button onClick={() => TELECHARGER()} className="btnTelecharger">
         Telecharger PNG
-      </button>
+      </button> */}
       <section id="portfolio">
         <header>
           <section id="titrePrincipal_portfolio">
-            <h1>Nicolas delahaie</h1>
+            <h1>Nicolas DELAHAIE</h1>
             <hr className="trait traitMarron" />
             <p>
               Projets colaboratifs et personnels
@@ -197,202 +285,27 @@ export function Home() {
             </section> */}
 
             <section id="zonePhotosProjets">
-              <article id="surfNow">
-                <img
-                  src={require("../datas/photos_projets/SurfNow.png")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>SurfNow</h2>
-                  <p className="descriptionProjet">
-                    Application maquetée puis programmée en html et css
-                  </p>
-                  <p className="dateProjet">
-                    Projet en semestre 1 de BUT 1 en Développement web
-                  </p>
-                </section>
-              </article>
-              <article id="bataille">
-                <img
-                  src={require("../datas/photos_projets/bataille_navale.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Bataille navale</h2>
-                  <p className="descriptionProjet">
-                    Interface du jeux de la Bataille codé sur la console en C++
-                  </p>
-                  <p className="dateProjet">
-                    Projet en semestre 1 de BUT 1 en Programmation bas niveau
-                  </p>
-                </section>
-              </article>
-              <article id="roulette">
-                <img
-                  src={require("../datas/photos_projets/roulette.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Jeux de la roulette</h2>
-                  <p className="descriptionProjet">
-                    Programme C++ qui affiche dans la console le jeux de la
-                    roulette et qui permet de tenter automatiquement des
-                    méthodes sur de grands nombres de parties pour observer la
-                    tendance. On peut y jouer en naviguant avec les fleches puis
-                    en validant avec entrer. L'affichage est dynamique en
-                    fonction de ce que le joueur séléctionne.
-                  </p>
-                  <p className="dateProjet">
-                    Projet personnel réalisé en semestre 2 de BUT 1
-                  </p>
-                </section>
-              </article>
+              {/* const projets = {
+                  nomImage: "chemins_bus.jpg",
+                  titre: "Itineraires de bus",
+                  description:
+                    "Codage de méthodes du plus court chemin en python appliqué sur le réseau de bus du bab",
+                  date: "Projet en semestre 2 de BUT 1 en Mathématiques",
+                }; */}
 
-              <article id="puissance4">
-                <img
-                  src={require("../datas/photos_projets/puissance4.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Puissance 4</h2>
-                  <p className="descriptionProjet">
-                    Codage du puissance 4 en assembleur sur simulateur à la
-                    suite d'une évaluation reprenant un bout de l'algorithme
-                    (affichage des jetons)
-                  </p>
-                  <p className="dateProjet">Projet personnel de fin de BUT1</p>
-                </section>
-              </article>
-              <article id="reseau">
-                <img
-                  src={require("../datas/photos_projets/reseau.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Adressage réseau d'une entreprise</h2>
-                  <p className="descriptionProjet">
-                    Architecture réseau d'une entreprise factice pensée et
-                    adressée depuis Marionnet
-                  </p>
-                  <p className="dateProjet">
-                    Projet en semestre 2 de BUT 1 en Réseau
-                  </p>
-                </section>
-              </article>
-              <article id="bruitage">
-                <img
-                  src={require("../datas/photos_projets/bruitage.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Bruitage d'image</h2>
-                  <p className="descriptionProjet">
-                    Programme python qui va bruiter une image plus ou moins .Il
-                    peut également transformer un pixel art avec beaucoup de
-                    pixels en un pixel art avec le strice minimum de pixels.
-                  </p>
-                  <p className="dateProjet">
-                    Projet en fin de trimestre de terminale en NSI
-                  </p>
-                </section>
-              </article>
-              <article id="hanoi">
-                <img
-                  src={require("../datas/photos_projets/Hanoi.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Tours d'Hanoï</h2>
-                  <p className="descriptionProjet">
-                    Programme C++ qui permet de jouer aux tours d'Hanoï dans la
-                    console. Il suffit de cliquer sur la tour de base puis sa
-                    destination. On peut également retourner en arrière grace à
-                    un système de pile.
-                  </p>
-                  <p className="dateProjet">
-                    Projet personnel basé sur un TP en semestre 2 de BUT 1 en
-                    programmation bas niveau
-                  </p>
-                </section>
-              </article>
-              <article id="demineur">
-                <img
-                  src={require("../datas/photos_projets/demineur.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Démineur</h2>
-                  <p className="descriptionProjet">
-                    Programme C++ qui permet de jouer au démineur dans la
-                    console. Il suffit d'écrire l'instruction puis de valider et
-                    la console se met a jour.
-                  </p>
-                  <p className="dateProjet">
-                    Projet personnel au semestre 1 du BUT 1
-                  </p>
-                </section>
-              </article>
-              <article id="graphiques_rugby">
-                <img
-                  src={require("../datas/photos_projets/graphique_python.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Analyses équipe rugby</h2>
-                  <p className="descriptionProjet">
-                    Programme python affichant des graphiques divers et variés
-                    liés à différentes analyses sur des données csv d'une équipe
-                    de rugby.
-                  </p>
-                  <p className="dateProjet">
-                    Projet en semestre 2 de BUT 1 en mathématiques
-                  </p>
-                </section>
-              </article>
-              <article id="chifoumi">
-                <img
-                  src={require("../datas/photos_projets/Chifoumi.jpg")}
-                  alt=""
-                  className="photosProjets"
-                />
-                <section className="textePhotoProjet">
-                  <h2>Chifoumi</h2>
-                  <p className="descriptionProjet">
-                    Programme C++ utilisant un modèle MVP sur QT. Ce chifoumi
-                    est très complet : persalisation du temps et du pseudo,
-                    pause du temps, identification avec une base de donnée et
-                    bien plus encore.
-                  </p>
-                  <p className="dateProjet">
-                    Projet en semestre 2 de BUT 1 en programmation IHM
-                  </p>
-                </section>
-              </article>
-              {/* <article id="">
-                          <img src={require("../datas/photos_projets/.jpg" alt="" className="photosProjets"/>
-                          <section className="textePhotoProjet">
-                              <h2></h2>
-                              <p className="descriptionProjet"></p>
-                              <p className="dateProjet">Projet en semestre X de BUT X en X </p>
-                          </section>
-                      </article>
-                      <article id="">
-                          <img src={require("../datas/photos_projets/.jpg" alt="" className="photosProjets"/>
-                          <section className="textePhotoProjet">
-                              <h2></h2>
-                              <p className="descriptionProjet"></p>
-                              <p className="dateProjet">Projet en semestre X de BUT X en X </p>
-                          </section>
-                      </article> */}
+              {projets.map((projet) => (
+                <article id={projet.nom}>
+                  <img
+                    src={require("../datas/photos_projets/" + projet.nomImage)}
+                    className="photosProjets"
+                  />
+                  <section className="textePhotoProjet">
+                    <h2>{projet.titre}</h2>
+                    <p className="descriptionProjet">{projet.description}</p>
+                    <p className="dateProjet">{projet.date}</p>
+                  </section>
+                </article>
+              ))}
             </section>
           </article>
         </main>
@@ -419,7 +332,7 @@ export function Home() {
       <section id="cv">
         <header>
           <section id="titrePrincipal_cv">
-            <h1>{datas.titrePrincipal.nom}</h1>
+            <h1>Nicolas DELAHAIE</h1>
             <h2>{datas.titrePrincipal.profession}</h2>
           </section>
 
