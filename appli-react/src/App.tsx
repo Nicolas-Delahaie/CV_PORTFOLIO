@@ -5,8 +5,6 @@ import React from "react";
 
 import "./styles/index.scss";
 import { Personnalisation, Home } from "./pages/index";
-// import { Personnalisation } from "./pages/Personnalisation.tsx";
-// import { Home } from "./pages/Home.tsx";
 
 function App() {
   return (
