@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ae7ed4c1.css",
+    "main.js": "/static/js/main.2568f379.js",
+    "static/js/787.46239fa8.chunk.js": "/static/js/787.46239fa8.chunk.js",
+    "static/media/chemins_bus.jpg": "/static/media/chemins_bus.1a3124e7953683c05288.jpg",
+    "static/media/demineur.jpg": "/static/media/demineur.afc12afa9517c58448ee.jpg",
+    "static/media/bruitage.jpg": "/static/media/bruitage.c62914cfa7aa91ccf578.jpg",
+    "static/media/bataille_navale.jpg": "/static/media/bataille_navale.b4b0ce93264c9feba641.jpg",
+    "static/media/SurfNow.png": "/static/media/SurfNow.e88a58e16d2d3fddbec1.png",
+    "static/media/roulette.jpg": "/static/media/roulette.2ed5dfafedb2248ee331.jpg",
+    "static/media/Chifoumi.jpg": "/static/media/Chifoumi.3c1c7cca2dfb0d466442.jpg",
+    "static/media/graphique_python.jpg": "/static/media/graphique_python.96e66b74df32d3a86db6.jpg",
+    "static/media/Hanoi.jpg": "/static/media/Hanoi.bd1bd8d7c695910f6847.jpg",
+    "static/media/puissance4.jpg": "/static/media/puissance4.348fcf347d7fc15afc5b.jpg",
+    "index.html": "/index.html",
+    "main.ae7ed4c1.css.map": "/static/css/main.ae7ed4c1.css.map",
+    "main.2568f379.js.map": "/static/js/main.2568f379.js.map",
+    "787.46239fa8.chunk.js.map": "/static/js/787.46239fa8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae7ed4c1.css",
+    "static/js/main.2568f379.js"
+  ]
+}
