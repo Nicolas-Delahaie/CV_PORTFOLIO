@@ -4,7 +4,7 @@ import { useState } from "react";
 import React from "react";
 
 import "./styles/index.scss";
-import { Personnalisation, Home } from "./pages/index";
+import { Personnalisation, Home } from "./screens/index";
 
 function App() {
   return (
