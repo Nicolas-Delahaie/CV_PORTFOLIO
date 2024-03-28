@@ -1,0 +1,85 @@
+{
+  "titrePrincipal": {
+    "profession": "ETUDIANT INFORMATIQUE"
+  },
+  "informationsPersonnelles": {
+    "adresse": "56 avenue Docteur Bernard Gaudeul, 64100 Bayonne",
+    "numero": "07 82 56 37 44",
+    "mail": "nico601.delahaie@gmail.com",
+    "date_de_naissance": "6 janvier 2003",
+    "permis": "Titulaire du permis B",
+    "linkedin": {
+      "lien": "https://www.linkedin.com/in/nicolas-delahaie-a02b38257/",
+      "nomProfil": "Nicolas DELAHAIE"
+    }
+  },
+  "objectifs": {
+    "stage": "Je souhaiterais à la suite de mon BUT informatique entrer en école d’ingénieur. Au préalable, j’aimerais, à l’issue de mes stages, trouver la specialité qui me conviendrait le mieux parmi celles que j’étudie actuellement.",
+    "job_etudiant": "Actuellement en BUT informatique, je souhaiterais trouver du travail (job d’été, missions d’intérim) pour financer mes futurs projets, tout en appréhendant le monde du travail.",
+    "interim": "Actuellement en BUT informatique, je souhaiterais découvrir le monde du travail en mettant ma condition physique à utilité."
+  },
+  "formations": {
+    "titre": "FORMATIONS",
+    "contenu": [
+      {
+        "formation": "BUT Informatique",
+        "duree": "(depuis 2021)",
+        "details": [
+          "Parcours A",
+          "IUT de Bayonne",
+          "Université de Pau et des Pays de l'Adour"
+        ]
+      },
+      {
+        "formation": "Lycee Alfred Kastler",
+        "duree": "(2018-2020)",
+        "details": [
+          "Spécialités :",
+          ["NSI", "Maths expertes", "(Physique)"],
+          "Bac mention bien"
+        ]
+      }
+    ]
+  },
+  "savoir_faire": [
+    [true, "Organiser", " mon temps de travail"],
+    [true, "Manager", " une équipe de projet"],
+    [true, "Vulgariser", " un projet"],
+    [true, "Fabriquer", " des objets à partir de DAO"],
+    [true, "Pratiquer :", ""],
+    [
+      true,
+      [
+        "Python / C++ / Java",
+        "HTML / CSS / PHP / JavaScript",
+        "SQL / DAO",
+        "SHELL Unix"
+      ]
+    ]
+  ],
+  "savoir_etre": [
+    [true, "Rigoureux :", " respecte méticuleusement les consignes"],
+    [
+      true,
+      "Perseverant :",
+      " ne lâche pas une tâche lorsqu'elle n'est pas completement achevée"
+    ],
+    [true, "Discipliné :", " alimentation et sports dont musculation"],
+    [
+      true,
+      "Sociable :",
+      " communication aisée en équipe grâce à ma participation à divers projets "
+    ],
+    [
+      true,
+      "Actif :",
+      " pratique quotidienne du vélo (indépendant des transports en commun)"
+    ],
+    [
+      true,
+      "Partageur :",
+      " enthousiaste à l'idée de transmettre mes connaissances"
+    ],
+    [true, "Soif de connaissance :", " toujours envie d’apprendre"]
+  ]
+}

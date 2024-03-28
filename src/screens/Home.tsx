@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
 import html2canvas from "html2canvas";
+import personnalDatasJson from "./../datas/personnal_datas.json";
+import projectsJson from "./../datas/projects.json";
+import { isNumberObject, isStringObject } from "util/types";
 
 const localisation = require("../datas/logos/localisation.jpg");
 const telephone = require("../datas/logos/telephone.jpg");
@@ -13,222 +16,46 @@ const linkedin = require("../datas/logos/linkedin.png");
 export function Home() {
   // const [langue, setLangue] = useState("fr");
 
-  const [datas, setDatas] = useState({
-    titrePrincipal: {
-      profession: "ETUDIANT INFORMATIQUE",
-    },
-    informationsPersonnelles: {
-      adresse: "56 avenue Docteur Bernard Gaudeul, 64100 Bayonne",
-      numero: "07 82 56 37 44",
-      mail: "nico601.delahaie@gmail.com",
-      date_de_naissance: "6 janvier 2003",
-      permis: "Titulaire du permis B",
-      linkedin: {
-        lien: "https://www.linkedin.com/in/nicolas-delahaie-a02b38257/",
-        nomProfil: "Nicolas DELAHAIE",
-      },
-    },
-    objectifs: {
-      stage:
-        "Je souhaiterais à la suite de mon BUT informatique entrer en école d’ingénieur. Au préalable, j’aimerais, à l’issue de mes stages, trouver la specialité qui me conviendrait le mieux parmi celles que j’étudie actuellement.",
-      job_etudiant:
-        "Actuellement en BUT informatique, je souhaiterais trouver du travail (job d’été, missions d’intérim) pour financer mes futurs projets, tout en appréhendant le monde du travail.",
-      interim:
-        "Actuellement en BUT informatique, je souhaiterais découvrir le monde du travail en mettant ma condition physique à utilité.",
-    },
-    formations: {
-      titre: "FORMATIONS",
-      contenu: [
-        {
-          formation: "BUT Informatique",
-          duree: "(depuis 2021)",
-          details: [
-            "Parcours A",
-            "IUT de Bayonne",
-            "Université de Pau et des Pays de l'Adour",
-          ],
-        },
-        {
-          formation: "Lycee Alfred Kastler",
-          duree: "(2018-2020)",
-          details: [
-            "Spécialités :",
-            ["NSI", "Maths expertes", "(Physique)"],
-            "Bac mention bien",
-          ],
-        },
-      ],
-    },
-    savoir_faire: [
-      [true, "Organiser", " mon temps de travail"],
-      [true, "Manager", " une équipe de projet"],
-      [true, "Vulgariser", " un projet"],
-      [true, "Fabriquer", " des objets à partir de DAO"],
-      [true, "Pratiquer :", ""],
-      [
-        true,
-        [
-          "Python / C++ / Java",
-          "HTML / CSS / PHP / JavaScript",
-          "SQL / DAO",
-          "SHELL Unix",
-        ],
-      ],
-    ],
-    savoir_etre: [
-      [true, "Rigoureux :", " respecte méticuleusement les consignes"],
-      [
-        true,
-        "Perseverant :",
-        " ne lâche pas une tâche lorsqu'elle n'est pas completement achevée",
-      ],
-      [true, "Discipliné :", " alimentation et sports dont musculation"],
-      [
-        true,
-        "Sociable :",
-        " communication aisée en équipe grâce à ma participation à divers projets ",
-      ],
-      [
-        true,
-        "Actif :",
-        " pratique quotidienne du vélo (indépendant des transports en commun)",
-      ],
-      [
-        true,
-        "Partageur :",
-        " enthousiaste à l'idée de transmettre mes connaissances",
-      ],
-      [true, "Soif de connaissance :", " toujours envie d’apprendre"],
-    ],
-  });
+  enum T_type_projets {
+    back,
+    front,
+    reseau,
+  }
 
-  const TELECHARGER = () => {
-    const element = document.getElementById("cv")!; // Remplacez 'your-page' par l'ID de l'élément que vous souhaitez capturer
-    // html2canvas(element).then((canvas) => {
-    //   canvas.toBlob((blob) => {
-    //     // Créez un lien de téléchargement pour l'image
-    //     const link = document.createElement("a");
-    //     link.href = URL.createObjectURL(blob);
-    //     link.download = "CV.png"; // Nom du fichier à télécharger
-    //     link.click();
-    //   });
-    // });
+  const [datas, setDatas] = useState<any>(personnalDatasJson);
+
+  type T_projet = {
+    nomImage: string;
+    nom: string;
+    titre: string;
+    description: string;
+    date: string;
+    type: T_type_projets[];
   };
 
-  // const puppeteer = require('puppeteer');
+  const allProjects = projectsJson as T_projet[];
+  const [projetsFiltres, setProjetsFiltres] = useState<T_projet[]>();
+  const [filtres, setFiltres] = useState<T_type_projets | null>(null);
 
-  // async function capturePDF() {
-  //     const browser = await puppeteer.launch();
-  //     const page = await browser.newPage();
-  //     await page.goto('http://localhost:3000/'); // Remplacez par l'URL de votre page React
-
-  //     // Capture de la page en PDF
-  //     await page.pdf({ path: 'page.pdf', format: 'A4' }); // Le PDF sera enregistré en tant que 'page.pdf'
-
-  //     await browser.close();
-  // }
-  // useEffect(() => capturePDF(), []);
-
-  const projets = [
-    {
-      nomImage: "chemins_bus.jpg",
-      nom: "chemins_bus",
-      titre: "Itineraires de bus",
-      description:
-        "Codage de méthodes du plus court chemin en python appliqué sur le réseau de bus du bab",
-      date: "Projet en semestre 2 de BUT 1 en Mathématiques",
-    },
-    {
-      nomImage: "SurfNow.png",
-      nom: "surfNow",
-      titre: "SurfNow",
-      description: "Application maquetée puis programmée en html et css",
-      date: "Projet en semestre 1 de BUT 1 en Développement web",
-    },
-    {
-      nomImage: "bataille_navale.jpg",
-      nom: "bataille",
-      titre: "Bataille navale",
-      description:
-        "Interface du jeux de la Bataille codé sur la console en C++",
-      date: "Projet en semestre 1 de BUT 1 en Programmation bas niveau",
-    },
-    {
-      nomImage: "roulette.jpg",
-      nom: "roulette",
-      titre: "Jeux de la roulette",
-      description:
-        "Programme C++ qui affiche dans la console le jeux de la roulette et qui permet de tenter automatiquement des méthodes sur de grands nombres de parties pour observer la tendance. On peut y jouer en naviguant avec les fleches puis en validant avec entrer. L'affichage est dynamique en fonction de ce que le joueur séléctionne.",
-      date: "Projet personnel réalisé en semestre 2 de BUT 1",
-    },
-    {
-      nomImage: "puissance4.jpg",
-      nom: "puissance4",
-      titre: "Puissance 4",
-      description:
-        "Codage du puissance 4 en assembleur sur simulateur à la suite d'une évaluation reprenant un bout de l'algorithme (affichage des jetons)",
-      date: "Projet personnel de fin de BUT1",
-    },
-    {
-      nomImage: "reseau.jpg",
-      nom: "reseau",
-      titre: "Adressage réseau d'une entreprise",
-      description:
-        "Architecture réseau d'une entreprise factice pensée et adressée depuis Marionnet",
-      date: "Projet en semestre 2 de BUT 1 en Réseau",
-    },
-    {
-      nomImage: "bruitage.jpg",
-      nom: "bruitage",
-      titre: "Bruitage d'image",
-      description:
-        "Programme python qui va bruiter une image plus ou moins .Il peut également transformer un pixel art avec beaucoup de pixels en un pixel art avec le strice minimum de pixels.",
-    },
-    {
-      nomImage: "Hanoi.jpg",
-      nom: "hanoi",
-      titre: "Tours d'Hanoï",
-      description:
-        "Programme C++ qui permet de jouer aux tours d'Hanoï dans la console. Il suffit de cliquer sur la tour de base puis sa destination. On peut également retourner en arrière grace à un système de pile.",
-      date: "Projet personnel basé sur un TP en semestre 2 de BUT 1 en programmation bas niveau",
-    },
-    {
-      nomImage: "demineur.jpg",
-      nom: "demineur",
-      titre: "Démineur",
-      description:
-        "Programme C++ qui permet de jouer au démineur dans la console. Il suffit d'écrire l'instruction puis de valider et la console se met a jour.",
-      date: "Projet personnel au semestre 1 du BUT 1",
-    },
-    {
-      nomImage: "graphique_python.jpg",
-      nom: "graphiques_rugby",
-      titre: "Analyses équipe rugby",
-      description:
-        "Programme python affichant des graphiques divers et variés liés à différentes analyses sur des données csv d'une équipe de rugby.",
-      date: "Projet en semestre 2 de BUT 1 en mathématiques",
-    },
-    {
-      nomImage: "Chifoumi.jpg",
-      nom: "chifoumi",
-      titre: "Chifoumi",
-      description:
-        "Programme C++ utilisant un modèle MVP sur QT. Ce chifoumi est très complet : persalisation du temps et du pseudo, pause du temps, identification avec une base de donnée et bien plus encore.",
-      date: "Projet en semestre 2 de BUT 1 en programmation IHM",
-    },
-  ];
+  useEffect(() => {
+    console.log("Application du filtre : ", filtres);
+    setProjetsFiltres(
+      filtres === null
+        ? allProjects
+        : allProjects.filter((projet) => projet.type.includes(filtres))
+    );
+  }, [filtres]);
 
   return (
     <section id="home">
-      {/* <Link to="/personnalisation" className="lienPersonnalisation">Changer informations</Link> */}
-      {/* <button onClick={() => TELECHARGER()} className="btnTelecharger">
-        Telecharger PNG
-      </button> */}
+      {/* <Link to="/personnalisation" className="lienPersonnalisation">
+        Changer informations
+      </Link> */}
       <section id="portfolio">
         <header>
           <section id="titrePrincipal_portfolio">
             <h1>Nicolas DELAHAIE</h1>
-            <hr className="trait traitMarron" />
+            {/* <hr className="trait traitMarron" />
             <p>
               Projets colaboratifs et personnels
               <br />
@@ -236,8 +63,15 @@ export function Home() {
               compétences liens github domaines de compétences (avec projet type
               cliquable) systeme de tri pour voir les projets type trier par
               difficulte de projet
-            </p>
-            {/* <button><strong>VISIONNER MES PROJETS</strong></button> */}
+            </p> */}
+            <button
+              onClick={() => {
+                // document.getElementById("cv")?.scrollIntoView({ behavior: "smooth" })
+                alert("Curriculum Vitae bientôt disponible");
+              }}
+            >
+              <strong>Curriculum Vitae</strong>
+            </button>
           </section>
         </header>
         <main>
@@ -279,33 +113,51 @@ export function Home() {
                 </article> */}
 
           <article id="projets">
-            {/* <section id="titreProjet">
+            <section id="titreProjet">
               <h2>Mes projets</h2>
               <hr className="trait traitMarron" />
-            </section> */}
+              <p>
+                Projets colaboratifs et personnels
+                <br />
+                {/* ENGTRE EN MATIERE : Profil ce que je veux, qui je suis, compétences liens github
+              domaines de compétences (avec projet type cliquable) systeme de tri pour voir les
+              projets type trier par difficulte de projet */}
+              </p>
+            </section>
 
+            <section className="criteres">
+              <h3>Filtres</h3>
+              <p>Type de projet</p>
+              <select
+                id="maListeDeroulante"
+                onChange={(e) =>
+                  setFiltres(
+                    isNaN(+e.target.value) ? null : +e.target.value // Pas un nombre
+                  )
+                }
+              >
+                <option>Tous</option>
+                <option value={T_type_projets.back}>Back-end</option>
+                <option value={T_type_projets.front}>Front-end</option>
+                <option value={T_type_projets.reseau}>Réseau</option>
+              </select>
+            </section>
             <section id="zonePhotosProjets">
-              {/* const projets = {
-                  nomImage: "chemins_bus.jpg",
-                  titre: "Itineraires de bus",
-                  description:
-                    "Codage de méthodes du plus court chemin en python appliqué sur le réseau de bus du bab",
-                  date: "Projet en semestre 2 de BUT 1 en Mathématiques",
-                }; */}
-
-              {projets.map((projet) => (
-                <article id={projet.nom}>
-                  <img
-                    src={require("../datas/photos_projets/" + projet.nomImage)}
-                    className="photosProjets"
-                  />
-                  <section className="textePhotoProjet">
-                    <h2>{projet.titre}</h2>
-                    <p className="descriptionProjet">{projet.description}</p>
-                    <p className="dateProjet">{projet.date}</p>
-                  </section>
-                </article>
-              ))}
+              {projetsFiltres &&
+                projetsFiltres.map((projet) => (
+                  <article id={projet.nom}>
+                    <img
+                      src={require("../datas/photos_projets/" +
+                        projet.nomImage)}
+                      className="photosProjets"
+                    />
+                    <section className="textePhotoProjet">
+                      <h2>{projet.titre}</h2>
+                      <p className="descriptionProjet">{projet.description}</p>
+                      <p className="dateProjet">{projet.date}</p>
+                    </section>
+                  </article>
+                ))}
             </section>
           </article>
         </main>
@@ -329,7 +181,7 @@ export function Home() {
           </section>
         </footer>
       </section>
-      <section id="cv">
+      {/* <section id="cv">
         <header>
           <section id="titrePrincipal_cv">
             <h1>Nicolas DELAHAIE</h1>
@@ -450,15 +302,8 @@ export function Home() {
               )}
             </ul>
           </article>
-
-          {/* <article id="competences">
-                    <section className="separateur_savoirs">
-                        <h2 className="titre_separateur">COMPETENCES TECHNIQUES</h2>
-                        <section className="ligneSeparatrice"></section>
-                    </section>
-                </article> */}
         </main>
-      </section>
+      </section> */}
     </section>
   );
 }
